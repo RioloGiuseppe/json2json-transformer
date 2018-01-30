@@ -1,0 +1,32 @@
+{
+    "name": "json2json-transformer",
+    "version": "0.0.1",
+    "description": "Simple library to transform json documents using json templates",
+    "main": "./build/index.js",
+    "typings": "./build/index.d.ts",
+    "scripts": {
+        "prepublish": "tsc"
+    },
+    "author": {
+        "name": "Giuseppe Riolo",
+        "email": "riolo.giuseppe@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RioloGiuseppe/json2json-render.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/RioloGiuseppe/json2json-render/issues"
+    },
+    "homepage": "https://github.com/RioloGiuseppe/json2json-render#README",
+    "dependencies": {
+        "jsonpath": "^1.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^9.4.0"
+    },
+    "keywords": [
+        "json", "template", "render", "transform"
+    ]
+}

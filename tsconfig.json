@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "sourceMap": true,
+        "outDir": "./build",
+        "noImplicitAny": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "pretty": false,
+        "lib": ["es2015", "es2017", "dom"]
+    },
+    "compileOnSave": true,
+    "include": [
+        "./src/**/*",
+        "node_modules/grpc-tsd/src/grpc.d.ts"
+    ]
+}
