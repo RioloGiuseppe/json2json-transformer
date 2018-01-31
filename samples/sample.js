@@ -20,7 +20,7 @@ var template = {
     }]
 }
 
-var ep = {
+var data1 = {
     propertyDemo1: "some value",
     propertyDemo2: "other value",
     complexObject: {
@@ -31,7 +31,7 @@ var ep = {
     mumberValue:5000,
 }
 
-var box = {
+var data2 = {
     data2: "more data",
     values:{
         val: 0
@@ -39,8 +39,8 @@ var box = {
 }
 
 
-let step1 = render.parseTemplate(ep, template, true);
-let step2 = render.parseTemplate(box, step1, true);
+let step1 = render.parseTemplate(data1, template, true);
+let step2 = render.parseTemplate(data2, step1, true);
 
 console.log("template",JSON.stringify(template,null,2));
 console.log("step1",JSON.stringify(step1,null,2));
