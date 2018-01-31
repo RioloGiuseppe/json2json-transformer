@@ -21,12 +21,17 @@
     },
     "homepage": "https://github.com/RioloGiuseppe/json2json-render#README",
     "dependencies": {
-        "jsonpath": "^1.0.0"
+        "jsonpath": "^1.0.0",
+        "lodash": "^4.17.4"
     },
     "devDependencies": {
-        "@types/node": "^9.4.0"
+        "@types/node": "^9.4.0",
+        "@types/lodash": "4.14.98"
     },
     "keywords": [
-        "json", "template", "render", "transform"
+        "json",
+        "template",
+        "render",
+        "transform"
     ]
 }

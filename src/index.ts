@@ -1,10 +1,12 @@
 const jp = require('jsonpath');
+import { cloneDeep } from 'lodash'
 export default class {
     
     private static propertyRegex = /(\$\.)(.*?)(?=')/gi;
     private static arrayRegex = /(\$)(\.(.*?))?(\.\.)(.*?)(?=')/gi; 
-    static parseTemplate(data:object, template:object){
-        return this.recObj(data, template);
+    
+    static parseTemplate(data:object, template:object, cloneTemplate:boolean = true) {
+        return this.recObj(data, template, cloneTemplate);
     }
 
     private static evalData(_template, _prop, _data){
@@ -21,11 +23,11 @@ export default class {
         });
     }
    
-    private static recObj(data, template, clone=false) {
+    private static recObj(data, template, clone = true) {
         let o;
         if(clone === true) 
-            o = Object.assign({}, template); 
-        else
+            o = cloneDeep(template);
+            else
             o = template;
         Object.keys(o).forEach(element => {
             var a;
@@ -37,13 +39,13 @@ export default class {
                 }
             }
             if(typeof(o[element]) === "object" && Array.isArray(o[element]) !== true)
-                this.recObj(data, o[element]);
+                this.recObj(data, o[element], false);
             else if(Array.isArray(o[element]) === true) {
                 for(let i=0;i<o[element].length;i++) {
                     if(typeof(o[element][i]) === "string")
                         this.evalData(o[element], i, data);
                     if(typeof(o[element][i]) === "object")
-                        this.recObj(data, o[element][i]);
+                        this.recObj(data, o[element][i], false);
                 }
             }
             else 
