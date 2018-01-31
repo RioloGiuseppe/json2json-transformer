@@ -1,4 +1,4 @@
-var render = require('../build/index').default;
+var render = require('../build/index');
 
 var template = {
     literalProperty: "Constant",

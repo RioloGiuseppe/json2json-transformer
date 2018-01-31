@@ -2,14 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var jp = require('jsonpath');
 var lodash_1 = require("lodash");
-var default_1 = /** @class */ (function () {
-    function default_1() {
+var JsonTransform = /** @class */ (function () {
+    function JsonTransform() {
     }
-    default_1.parseTemplate = function (data, template, cloneTemplate) {
+    JsonTransform.parseTemplate = function (data, template, cloneTemplate) {
         if (cloneTemplate === void 0) { cloneTemplate = true; }
         return this.recObj(data, template, cloneTemplate);
     };
-    default_1.evalData = function (_template, _prop, _data) {
+    JsonTransform.evalData = function (_template, _prop, _data) {
         var res = this.propertyRegex.exec(_template[_prop]);
         var mat = [];
         while (res !== null) {
@@ -22,7 +22,7 @@ var default_1 = /** @class */ (function () {
                 _template[_prop] = _template[_prop].replace("'" + m + "'", query[0]);
         });
     };
-    default_1.recObj = function (data, template, clone) {
+    JsonTransform.recObj = function (data, template, clone) {
         var _this = this;
         if (clone === void 0) { clone = true; }
         var o;
@@ -54,9 +54,13 @@ var default_1 = /** @class */ (function () {
         });
         return o;
     };
-    default_1.propertyRegex = /(\$\.)(.*?)(?=')/gi;
-    default_1.arrayRegex = /(\$)(\.(.*?))?(\.\.)(.*?)(?=')/gi;
-    return default_1;
+    JsonTransform.propertyRegex = /(\$\.)(.*?)(?=')/gi;
+    JsonTransform.arrayRegex = /(\$)(\.(.*?))?(\.\.)(.*?)(?=')/gi;
+    return JsonTransform;
 }());
-exports.default = default_1;
+function parseTemplate(data, template, cloneTemplate) {
+    if (cloneTemplate === void 0) { cloneTemplate = true; }
+    return JsonTransform.parseTemplate(data, template, cloneTemplate);
+}
+exports.parseTemplate = parseTemplate;
 //# sourceMappingURL=index.js.map

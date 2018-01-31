@@ -1,6 +1,6 @@
 const jp = require('jsonpath');
 import { cloneDeep } from 'lodash'
-export default class {
+class JsonTransform {
     
     private static propertyRegex = /(\$\.)(.*?)(?=')/gi;
     private static arrayRegex = /(\$)(\.(.*?))?(\.\.)(.*?)(?=')/gi; 
@@ -54,4 +54,8 @@ export default class {
         });
         return o;
     }
+}
+
+export function parseTemplate(data:object, template:object, cloneTemplate:boolean = true) {
+    return JsonTransform.parseTemplate(data, template, cloneTemplate)
 }

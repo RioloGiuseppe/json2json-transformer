@@ -6,10 +6,16 @@ Pulls data from a data object using JSONPath and generate a new objects based on
 JSONPath is like XPath for JavaScript objects. To learn the syntax, read the documentation for the [JSONPath](https://www.npmjs.org/package/JSONPath) package on npm and the [original article](http://goessner.net/articles/JsonPath/) by Stefan Goessner.
 
 ## Usage
-Import reference
+Import reference in javascript
 ```js
-const render = require('json2json-transformer').default;
+const render = require('json2json-transformer');
 ```
+
+Import reference in typescript
+```ts
+import * as render from 'json2json-transformer'
+```
+
 Define a template 
 
 ```js
