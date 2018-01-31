@@ -63,7 +63,7 @@ Apply template
 // Apply data1 at template object. All un matched properties will be ignored
 let step1 = render.parseTemplate(data1, template, true);
 
-// Apply data2 at template object. All un matched properties will be ignored
+// Apply data2 at step1 output. All un matched properties will be ignored
 let step2 = render.parseTemplate(data2, step1, true);
 
 // Print output in console
