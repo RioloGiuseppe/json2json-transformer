@@ -1,0 +1,14 @@
+{
+    "literalProperties":{
+        "literal1": "Constant",
+        "literal2": "Constant"
+    } ,
+    "simpleProperties": {
+        "simple1": "'$.propertyDemo1'",
+        "simple2": "'$.data.propertyDemo2'"
+    },
+    "composePropeties":{
+        "compose1": "'$.data.propertyDemo1' '$.data.propertyDemo2'. Number: '$.data.mumberValue'",
+        "compose2": "'$.propertyDemo1' '$.propertyDemo2'. Number: '$.mumberValue'"
+    } 
+}

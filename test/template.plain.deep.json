@@ -1,0 +1,5 @@
+{
+    "literalProperty": "Constant",
+    "simpleProperty": "'$.data.propertyDemo1'",
+    "composeProperty": "'$.data.propertyDemo1' '$.data.propertyDemo2'. Number: '$.data.mumberValue'"
+}
