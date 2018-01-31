@@ -34,7 +34,7 @@ class JsonTransform {
             if((a = this.arrayRegex.exec(element)) && Array.isArray(o[element]) && typeof(o[element][0]) === "string" && typeof(o[element][1]) === "object") {
                 let query = jp.query(data, a[0]);
                 if(query.length > 0){
-                    o[o[element][0]] = query.map(d => this.recObj(d, o[element][1], true));
+                    o[o[element][0]] = query[0].map(d => this.recObj(d, o[element][1], true));
                     delete o[element];
                 }
             }
