@@ -13,13 +13,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/RioloGiuseppe/json2json-render.git"
+        "url": "git+https://github.com/RioloGiuseppe/json2json-transformer.git"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/RioloGiuseppe/json2json-render/issues"
+        "url": "https://github.com/RioloGiuseppe/json2json-transformer/issues"
     },
-    "homepage": "https://github.com/RioloGiuseppe/json2json-render#README",
+    "homepage": "https://github.com/RioloGiuseppe/json2json-transformer#README",
     "dependencies": {
         "jsonpath": "^1.0.0",
         "lodash": "^4.17.4"
