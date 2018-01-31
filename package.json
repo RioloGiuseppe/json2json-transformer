@@ -1,6 +1,6 @@
 {
     "name": "json2json-transformer",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Simple library to transform json documents using json templates",
     "main": "./build/index.js",
     "typings": "./build/index.d.ts",
