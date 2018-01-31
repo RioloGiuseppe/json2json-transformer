@@ -1,10 +1,13 @@
 # json2json-transformer
-> Transform a generic object using JSONPath.
+Transform a generic object using JSONPath. <br/><br/>
 
 Pulls data from a data object using JSONPath and generate a new objects based on a template. Each of the template's properties can pull properties from the source data or an array of all results found by its JSONPath. When pulling an array of data you can also supply a subtemplate to transform each item in the array.
 
-JSONPath is like XPath for JavaScript objects. To learn the syntax, read the documentation for the [JSONPath](https://www.npmjs.org/package/JSONPath) package on npm and the [original article](http://goessner.net/articles/JsonPath/) by Stefan Goessner.
-
+## Import
+Import in your project using
+```sh
+npm i --s json2json-transformer
+```
 ## Usage
 Import reference in javascript
 ```js
