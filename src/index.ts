@@ -18,8 +18,16 @@ class JsonTransform {
         }
         mat.forEach(m=>{
             let query = jp.query(_data, m);
-            if(query.length > 0)
-                _template[_prop] = _template[_prop].replace("'" + m + "'", query[0]);
+            if(query.length > 0) {
+                let v = _template[_prop].replace("'" + m + "'", "");
+                if (v !== "") {
+                    _template[_prop] = _template[_prop].replace("'" + m + "'", query[0]);
+                }
+                else {
+                    _template[_prop] =  query[0];
+                }
+            }
+                
         });
     }
    

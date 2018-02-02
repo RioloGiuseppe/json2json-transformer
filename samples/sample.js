@@ -33,9 +33,9 @@ var data1 = {
 
 var data2 = {
     data2: "more data",
-    values:{
+    values:[{
         val: 0
-    }
+    }]
 }
 
 
