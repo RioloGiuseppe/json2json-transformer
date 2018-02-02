@@ -1,5 +1,6 @@
 const jp = require('jsonpath');
 import { cloneDeep } from 'lodash'
+import { type } from 'os';
 class JsonTransform {
     
     private static propertyRegex = /(\$\.)(.*?)(?=')/gi;
@@ -33,6 +34,8 @@ class JsonTransform {
    
     private static recObj(data, template, clone = true) {
         let o;
+        if(!template || (typeof(template) !== "string" && typeof(template) !== "object"))
+            return template;
         if(clone === true) 
             o = cloneDeep(template);
             else

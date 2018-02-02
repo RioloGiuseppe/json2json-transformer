@@ -33,6 +33,8 @@ var JsonTransform = /** @class */ (function () {
         var _this = this;
         if (clone === void 0) { clone = true; }
         var o;
+        if (!template || (typeof (template) !== "string" && typeof (template) !== "object"))
+            return template;
         if (clone === true)
             o = lodash_1.cloneDeep(template);
         else
