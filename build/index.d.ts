@@ -1,1 +1,1 @@
-export declare function parseTemplate(data: object, template: object, cloneTemplate?: boolean): any;
+export declare function parseTemplate(data: object, template: object, ignore?: string, cloneTemplate?: boolean): any;
