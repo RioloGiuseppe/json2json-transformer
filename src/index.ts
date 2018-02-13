@@ -19,7 +19,6 @@ class JsonTransform {
         }
         mat.forEach(m=>{
             let query = jp.query(_data, m);
-            if(query.length = 1)
             if(query.length > 0) {
                 let v = _template[_prop].replace("'" + m + "'", "");
                 if (v !== "") {

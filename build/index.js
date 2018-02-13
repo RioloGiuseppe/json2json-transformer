@@ -19,19 +19,18 @@ var JsonTransform = /** @class */ (function () {
         }
         mat.forEach(function (m) {
             var query = jp.query(_data, m);
-            if (query.length = 1)
-                if (query.length > 0) {
-                    var v = _template[_prop].replace("'" + m + "'", "");
-                    if (v !== "") {
-                        _template[_prop] = _template[_prop].replace("'" + m + "'", query[0]);
-                    }
-                    else if (typeof ignore === "string" && ignore !== "" && query[0] === ignore) {
-                        delete _template[_prop];
-                    }
-                    else {
-                        _template[_prop] = query[0];
-                    }
+            if (query.length > 0) {
+                var v = _template[_prop].replace("'" + m + "'", "");
+                if (v !== "") {
+                    _template[_prop] = _template[_prop].replace("'" + m + "'", query[0]);
                 }
+                else if (typeof ignore === "string" && ignore !== "" && query[0] === ignore) {
+                    delete _template[_prop];
+                }
+                else {
+                    _template[_prop] = query[0];
+                }
+            }
         });
     };
     JsonTransform.recObj = function (data, template, ignore, clone) {
