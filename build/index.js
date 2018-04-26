@@ -73,7 +73,7 @@ var JsonTransform = /** @class */ (function () {
         });
         return o;
     };
-    JsonTransform.propertyRegex = /(\$\.)(.*?)(?=')/gi;
+    JsonTransform.propertyRegex = /((\$\.)|(\$\[[0-9]+\]))(.*?)(?=')/gi;
     JsonTransform.arrayRegex = /(\$)(\.(.*?))?(\.\.)(.*?)(?=')/gi;
     return JsonTransform;
 }());

@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash'
 import { type } from 'os';
 class JsonTransform {
     
-    private static propertyRegex = /(\$\.)(.*?)(?=')/gi;
+    private static propertyRegex = /((\$\.)|(\$\[[0-9]+\]))(.*?)(?=')/gi;
     private static arrayRegex = /(\$)(\.(.*?))?(\.\.)(.*?)(?=')/gi; 
     
     static parseTemplate(data:object, template:object, ignore: string = null, cloneTemplate:boolean = true) {
