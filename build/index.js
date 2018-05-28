@@ -11,11 +11,12 @@ var JsonTransform = /** @class */ (function () {
         return this.recObj(data, template, ignore, cloneTemplate);
     };
     JsonTransform.evalData = function (_template, _prop, _data, ignore) {
-        var res = this.propertyRegex.exec(_template[_prop]);
+        var regexpinstance = new RegExp(this.propertyRegexPattern, "gi");
+        var res = regexpinstance.exec(_template[_prop]);
         var mat = [];
         while (res !== null) {
             mat.push(res[0]);
-            res = this.propertyRegex.exec(_template[_prop]);
+            res = regexpinstance.exec(_template[_prop]);
         }
         mat.forEach(function (m) {
             var query = jp.query(_data, m);
@@ -45,8 +46,9 @@ var JsonTransform = /** @class */ (function () {
         else
             o = template;
         Object.keys(o).forEach(function (element) {
-            var a;
-            if ((a = _this.arrayRegex.exec(element)) && Array.isArray(o[element]) && typeof (o[element][0]) === "string" && typeof (o[element][1]) === "object") {
+            var regexpinstance = new RegExp(_this.arrayRegexPattern, "gi");
+            var a = regexpinstance.exec(element);
+            if (a && Array.isArray(o[element]) && typeof (o[element][0]) === "string" && typeof (o[element][1]) === "object") {
                 var query = jp.query(data, a[0]);
                 if (query.length > 0) {
                     if (typeof query[0] === "string" && ignore !== "" && query[0] === ignore) {
@@ -73,8 +75,8 @@ var JsonTransform = /** @class */ (function () {
         });
         return o;
     };
-    JsonTransform.propertyRegex = /((\$\.)|(\$\[[0-9]+\]))(.*?)(?=')/gi;
-    JsonTransform.arrayRegex = /(\$)(\.(.*?))?(\.\.)(.*?)(?=')/gi;
+    JsonTransform.propertyRegexPattern = "((\\$\\.)|(\\$\\[[0-9]+\\]))(.*?)(?=')"; // /((\$\.)|(\$\[[0-9]+\]))(.*?)(?=')/gi;
+    JsonTransform.arrayRegexPattern = "(\\$)(\\.(.*?))?(\\.\\.)(.*?)(?=')"; // /(\$)(\.(.*?))?(\.\.)(.*?)(?=')/gi; 
     return JsonTransform;
 }());
 function parseTemplate(data, template, ignore, cloneTemplate) {
